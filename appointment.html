@@ -1,0 +1,75 @@
+`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dentist </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo">  dentist </a>
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="services.html">services</a>
+            <a href="pricing.html">pricing</a>
+            <a href="members.html">members</a>
+        </nav>
+        <a href="appointment.html" class="btn"> make appointment </a>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <section class="contact" id="contact" style="margin-top: 50px;">
+
+        <h1 class="heading">make appointment</h1>
+
+        <form action="" onsubmit="return validateEmail()">
+
+            <span>your name :</span>
+            <div class="inputBox">
+                <input type="text" placeholder="first name" pattern="[A-Za-z\s]+" required>
+                <input type="text" placeholder="last name" pattern="[A-Za-z\s]+" required>
+            </div>
+
+            <span>your email :</span>
+            <input type="email" id="email" placeholder="enter your email" class="box" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+
+            <span>your number :</span>
+            <input type="number" placeholder="enter your number" class="box" required>
+
+            <span>appointment date :</span>
+            <input type="datetime-local" class="box" required>
+
+            <input type="submit" value="order now" class="btn">
+
+        </form>
+    </section>
+    <script>
+        function validateEmail() {
+            var emailInput = document.getElementById('email');
+            var email = emailInput.value.trim();
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailRegex.test(email)) {
+                alert('Email is valid.');
+                emailInput.value = '';
+                return true;
+            } else {
+                alert('Please enter a valid email.');
+                return false;
+            }
+        }
+    </script>
+    <script src="scri.js"></script>
+
+</body>
+
+</html>
